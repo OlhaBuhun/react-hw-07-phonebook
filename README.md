@@ -110,3 +110,12 @@ GitHub.
 3. Якщо всі кроки пройшли успішно, зібрана продакшн-версія файлів проєкту
    відправляється в гілку `gh-pages`. В іншому випадку, в лозі виконання
    скрипта буде вказано в чому проблема.
+
+
+   Установка програм
+
+   1. npm install @reduxjs/toolkit react-redux
+   2. регаєм mockapi.io.
+   3. npm install axios
+   4. npm install styled-components
+   5. npm i modern-normalize 
