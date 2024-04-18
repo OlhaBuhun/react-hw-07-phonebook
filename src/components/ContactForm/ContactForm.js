@@ -1,18 +1,32 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Form, FormButton, FormInput, FormLabel } from './ContactForm.styled';
 import { addContact } from '../../redux/operations';
+import { selectContacts } from '../../redux/selectors';
+import { toast } from 'react-toastify';
 
 export const ContactForm = () => {
+  const contacts = useSelector(selectContacts);
   const dispatch = useDispatch();
 
   const handleSubmit = event => {
     event.preventDefault();
+
     const form = event.target;
-    const createContact = {
-      name: form.elements.name.value,
-      number: form.elements.number.value,
-    };
-    dispatch(addContact(createContact));
+    const formName = form.elements.name.value;
+    const formPhone = form.elements.phone.value;
+   
+    if (contacts.some(({ name }) => name === formName)) {
+      toast.error(
+        `${formName} is already in contacts`
+      );
+    }
+
+    if (contacts.some(({ phone }) => phone === formPhone)) {
+      toast.error(
+        `${formPhone} is already in contacts`
+      )
+    }
+    dispatch(addContact({name: formName, phone: formPhone}));
     form.reset();
   };
 
@@ -20,11 +34,11 @@ export const ContactForm = () => {
     <Form onSubmit={handleSubmit}>
       <FormLabel htmlFor="name">
         Name
-        <FormInput type="text" name="name" required />
+        <FormInput type="text" name="name" value={contacts.name} required />
       </FormLabel>
       <FormLabel htmlFor="name">
         Number
-        <FormInput type="tel" name="number" required />
+        <FormInput type="tel" name="phone" value={contacts.phone} required />
       </FormLabel>
       <FormButton type="submit">Add contact</FormButton>
     </Form>

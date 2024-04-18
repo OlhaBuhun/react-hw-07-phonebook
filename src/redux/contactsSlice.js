@@ -35,7 +35,7 @@ const contactsSlice = createSlice({
       state.items.push(action.payload);
     })
     .addCase(addContact.rejected, handleRejected)
-    
+
     .addCase(deleteContact.pending, handlePending)
     .addCase(deleteContact.fulfilled, (state, action) => {
       state.isLoading = false;
@@ -49,5 +49,5 @@ const contactsSlice = createSlice({
   }
 });
 
-// export const { addContacts, deleteContacts } = contactsSlice.actions;
+export const { addContacts, deleteContacts } = contactsSlice.actions;
 export const contactsReducer = contactsSlice.reducer;

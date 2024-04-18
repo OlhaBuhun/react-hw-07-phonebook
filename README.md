@@ -119,3 +119,4 @@ GitHub.
    3. npm install axios
    4. npm install styled-components
    5. npm i modern-normalize 
+   6. npm i react-toastify
