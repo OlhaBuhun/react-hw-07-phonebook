@@ -9,9 +9,9 @@ import { useEffect } from 'react';
 import { fetchContacts } from '../../redux/operations';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Loader } from 'components/loader';
 
 export const App = () => {
-  // const contacts = useSelector(selectContacts);
   const dispatch = useDispatch();
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
@@ -26,7 +26,7 @@ export const App = () => {
       <ContactForm />
       <h2>Contacts</h2>
       <Filter />
-      {isLoading && !error && <b>Request in progress...</b>}
+      {isLoading && !error && < Loader />}
       <ContactList />
       <ToastContainer autoClose={3000} />
       <GlobalStyle />

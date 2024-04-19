@@ -6,7 +6,7 @@ import { Contact } from 'components/Contact/Contact';
 export const ContactList = () => {
  
   const contacts = useSelector(selectVisibleContacts);
-  // console.log(contacts);
+  
   return (
     <ContactListStyled>
       {contacts.map(contact => (

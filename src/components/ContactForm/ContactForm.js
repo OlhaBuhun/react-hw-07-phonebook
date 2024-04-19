@@ -19,12 +19,14 @@ export const ContactForm = () => {
       toast.error(
         `${formName} is already in contacts`
       );
+      return form.reset();
     }
 
     if (contacts.some(({ phone }) => phone === formPhone)) {
       toast.error(
         `${formPhone} is already in contacts`
-      )
+      );
+      return form.reset();
     }
     dispatch(addContact({name: formName, phone: formPhone}));
     form.reset();

@@ -120,3 +120,5 @@ GitHub.
    4. npm install styled-components
    5. npm i modern-normalize 
    6. npm i react-toastify
+   7. npm install react-loader-spinner
+   

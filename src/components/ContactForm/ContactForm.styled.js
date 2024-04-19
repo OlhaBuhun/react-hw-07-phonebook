@@ -3,23 +3,25 @@ import styled from 'styled-components';
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  /* justify-content: space-between; */
+  width: 600px;
+  padding: 12px;
+  background-color: #c0edf2;
+  border: 3px solid #7e8c15;
+  border-radius: 4px;
 `;
 export const FormLabel = styled.label`
-  padding-bottom: 10px;
-  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+  color: #7e8c15;
   font-size: 20px;
 `;
 export const FormInput = styled.input`
-  margin-bottom: 20px;
-  margin-left: 20px;
-  padding: 0px 15px 0px 15px;
-  width: 200px;
-  height: 40px;
-  border: 1px solid #009dff;
-  border-radius: 60px;
-  font-size: 16px;
+  padding: 8px 12px;
+  font: inherit;
+  cursor: pointer;
+  border-radius: 6px;
+  border: 2px solid #7e8c15;
 
   &:focus {
     background-color: #e4e9f0;
@@ -38,6 +40,7 @@ export const FormButton = styled.button`
   transition: all 0.8s;
   margin-left: 10px;
   font-size: 10px;
+  border: 2px solid #7e8c15;
 
   &:hover {
     background-color: #00d4ff;

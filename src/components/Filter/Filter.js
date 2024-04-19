@@ -18,7 +18,6 @@ export const Filter = () => {
       Find contacts by name
       <FilterInput
         type="text"
-        // name="filter"
         placeholder="Enter contact name"
         value={value}
         onChange={handleFilter}
